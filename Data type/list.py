@@ -53,3 +53,6 @@ maximum = max([1,2,3,5,4,6,8])
 minimum = min([2,1,4,5,9,0,5])
 total = sum([4,2,9,5])
 print(f"length {length} maximum {maximum} minimum {minimum} Total {total}")
+
+# all list function
+print(dir(my_list))
