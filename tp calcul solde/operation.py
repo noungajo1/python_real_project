@@ -9,11 +9,13 @@ def load_data_base():
     return data
 
 data_base = load_data_base()
+salaire = 22.18
 """
 je te fourni une date tu me donnes:
 - le nombre de jour valide durant cette semaine, 
 - les plage horaire present de chaque jour
 - le nombre d'heure totale pointe
+- Quel salaire pour cette semaine
 format : aaaa/mm/jj
 """
 def get_hour_from_plage(plages):
@@ -35,6 +37,8 @@ def get_plage_horaire(jours):
         print(list_plage)
         heure_total_pointe = get_hour_from_plage(list_plage) + heure_total_pointe  
     print(f'Le nombre d\heures valide est : {heure_total_pointe:.2f}') 
+    salaire_final = salaire * heure_total_pointe
+    print(f'Le salaire de cette semaine est : {salaire_final:.2f} $')
     return 0
 
 
