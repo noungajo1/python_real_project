@@ -1,0 +1,25 @@
+{
+    "semaine_1" :{
+        "date_debut":"2024/01/22",
+        "deja_paye":0,
+        "present":1,
+        "jours":[{"libelle_jour":"vendredi","plage":["11h40 13h10","15h20 17h00"]}]
+    },
+    "semaine_2" :{
+        "date_debut":"2024/01/29",
+        "deja_paye":0,
+        "present":1,
+        "jours":[{"libelle_jour":"lundi:pedago","plage":["12h00 16h00"]},
+        {"libelle_jour":"mardi","plage":["11h40 13h10","15h20 17h00"]},
+        {"libelle_jour":"mercredi","plage":["11h40 13h10","14h00 15h00","15h20 17h00"]},
+        {"libelle_jour":"jeudi","plage":["7h30 9h30","10h00 11h30","11h40 13h10","15h20 17h00"]}
+    ]
+    },
+    "semaine_3" :{
+        "date_debut":"2024/02/05",
+        "deja_paye":0,
+        "present":0,
+        "jours":[{"libelle_jour":"","plage":[]}]
+        
+    }
+}
