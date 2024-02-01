@@ -18,11 +18,10 @@ je te fourni une date tu me donnes:
 format : aaaa/mm/jj
 """
 def get_plage_horaire(jours):
-    print('Les jours')
     for jour in jours:
+        print(f"{jour['libelle_jour']} : ")
         list_plage = jour["plage"]
-        for plage in  list_plage:
-            print()
+        print(list_plage)
 
 
 def load_week_history_from_date(week_date):
