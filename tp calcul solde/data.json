@@ -21,7 +21,7 @@
         "deja_paye":0,
         "present":0,
         "jours":[
-        {"libelle_jour":"lundi","plages":["11:40 13:10","15:20 17:00"]},
+        {"libelle_jour":"lundi : travail en demi journee","plages":["15:20 17:00"]},
         {"libelle_jour":"mardi","plages":["11:30 13:10","15:20 17:00"]},
         {"libelle_jour":"mercredi","plages":["11:40 13:10","15:20 17:00"]},
         {"libelle_jour":"jeudi : pedago ","plages":["10:00 11:30","11:40 13:10","15:20 17:00"]},

@@ -104,4 +104,10 @@ def load_week_history_from_date(week_date, salaire):
 date_formatee = datetime.now().strftime("%Y-%m-%d")
 
 load_week_history_from_date(date_formatee,salaire)
-
+"""
+La phase deux du TP consiste a donner le salaire 
+courant a recevoir lorsque la date courante est saisie.
+si le salaire se fait chaque deux semaines, il faudra que l'appli
+donne l'historique de la plage salariale, si c'est 1 mois donne l'historique sur un mois
+si c'est deux semaines donnee l'historique du travail sur deux semaines
+"""
