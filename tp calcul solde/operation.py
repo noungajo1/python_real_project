@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 #Read python object from a json file
 
@@ -63,7 +63,29 @@ def get_plage_horaire(jours, salaire):
 
     return 0
 
+"""
+a partir d'une date fourni le premier jour 
+de la semaine auquel ce jour appartient
+"""
+def premier_jour_semaine(date_formatee):
+    # Conversion de la date en objet datetime
+    date_obj = datetime.strptime(date_formatee, "%Y-%m-%d")
+
+    # Calcul du jour de la semaine (0 = lundi, 6 = dimanche)
+    jour_semaine = date_obj.weekday()
+
+    # Calcul du décalage pour obtenir le premier jour de la semaine
+    decalage = timedelta(days=jour_semaine)
+
+    # Calcul du premier jour de la semaine
+    premier_jour = date_obj - decalage
+
+    # Formater la date du premier jour de la semaine
+    premier_jour_formate = premier_jour.strftime("%Y-%m-%d")
+    return premier_jour_formate
+
 def load_week_history_from_date(week_date, salaire):
+    week_date = premier_jour_semaine(week_date)
     for week in data_base.values():
         if week['date_debut'] == week_date:
             if week['present'] == 1:
@@ -79,6 +101,7 @@ def load_week_history_from_date(week_date, salaire):
     return 0
     
     
+date_formatee = datetime.now().strftime("%Y-%m-%d")
 
-load_week_history_from_date('2024/01/22',salaire)
+load_week_history_from_date(date_formatee,salaire)
 

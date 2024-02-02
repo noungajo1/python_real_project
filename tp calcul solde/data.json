@@ -1,22 +1,23 @@
 {
     "semaine_1" :{
-        "date_debut":"2024/01/22",
+        "date_debut":"2024-01-22",
         "deja_paye":0,
         "present":1,
         "jours":[{"libelle_jour":"vendredi","plages":["11:40 13:10","15:20 17:00"]}]
     },
     "semaine_2" :{
-        "date_debut":"2024/01/29",
+        "date_debut":"2024-01-29",
         "deja_paye":0,
         "present":1,
         "jours":[{"libelle_jour":"lundi:pedago","plages":["12:00 16:00"]},
         {"libelle_jour":"mardi","plages":["11:40 13:10","15:20 17:00"]},
         {"libelle_jour":"mercredi","plages":["11:40 13:10","14:00 15:00","15:20 17:00"]},
-        {"libelle_jour":"jeudi","plages":["7:30 9:30","10:00 11:30","11:40 13:10","15:20 17:00"]}
+        {"libelle_jour":"jeudi : Remplacement du matin -> ","plages":["7:30 9:30","10:00 11:30","11:40 13:10","15:20 17:00"]},
+        {"libelle_jour":"vendredi : Remplacement du matin -> Melinda","plages":["7:30 9:30","11:40 13:10","15:20 17:00"]}
     ]
     },
     "semaine_3" :{
-        "date_debut":"2024/02/05",
+        "date_debut":"2024-02-05",
         "deja_paye":0,
         "present":0,
         "jours":[{"libelle_jour":"","plages":[]}]
