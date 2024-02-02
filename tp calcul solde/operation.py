@@ -41,18 +41,27 @@ def get_hour_from_plage(plages):
     total_hours = total_time_in_seconds / 3600
     return total_hours
 
-def get_plage_horaire(jours):
+def get_plage_horaire(jours, salaire):
     heure_total_pointe = 0
-    for jour in jours:
-        print(f"{jour['libelle_jour']} : ")
-        list_plage = jour["plages"]
-        print(list_plage)
-        heure_total_pointe = get_hour_from_plage(list_plage) + heure_total_pointe  
-    print(f'Le nombre d\heures valide est : {heure_total_pointe:.2f}') 
-    salaire_final = salaire * heure_total_pointe
-    print(f'Le salaire de cette semaine est : {salaire_final:.2f} $')
-    return 0
 
+    for jour in jours:
+        libelle_jour = jour['libelle_jour']
+        list_plage = jour['plages']
+        
+        # Affichage du jour et des plages horaires si nécessaire
+        print(f"{libelle_jour}: {list_plage}")
+
+        # Calcul des heures pointe pour le jour actuel
+        heure_total_pointe += get_hour_from_plage(list_plage)
+
+    # Calcul du salaire total
+    salaire_final = salaire * heure_total_pointe
+
+    # Affichage des résultats
+    print(f'Le nombre d\'heures valide est : {heure_total_pointe:.2f}')
+    print(f'Le salaire de cette semaine est : {salaire_final:.2f} $')
+
+    return 0
 
 def load_week_history_from_date(week_date):
     weeks = data_base.values()
@@ -61,7 +70,7 @@ def load_week_history_from_date(week_date):
         if(week['date_debut']==week_date):
             if(week['present']==1):
                 jour_valide = len(week['jours'])
-                get_plage_horaire(week['jours'])
+                get_plage_horaire(week['jours'],salaire)
                 print(f'Jour valide : {jour_valide}')
             else:
                 print("Je n'ai pas travailler cette semaine")
