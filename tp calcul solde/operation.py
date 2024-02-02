@@ -63,23 +63,22 @@ def get_plage_horaire(jours, salaire):
 
     return 0
 
-def load_week_history_from_date(week_date):
-    weeks = data_base.values()
-    jour_valide = 0
-    for week in weeks:
-        if(week['date_debut']==week_date):
-            if(week['present']==1):
+def load_week_history_from_date(week_date, salaire):
+    for week in data_base.values():
+        if week['date_debut'] == week_date:
+            if week['present'] == 1:
                 jour_valide = len(week['jours'])
-                get_plage_horaire(week['jours'],salaire)
+                get_plage_horaire(week['jours'], salaire)
                 print(f'Jour valide : {jour_valide}')
             else:
-                print("Je n'ai pas travailler cette semaine")
+                print("Je n'ai pas travaillé cette semaine")
             return 0
+
+    # Si aucune correspondance n'est trouvée dans la boucle
     print('Date non prise en charge')
     return 0
-
     
     
 
-load_week_history_from_date('2024/01/22')
+load_week_history_from_date('2024/01/22',salaire)
 
