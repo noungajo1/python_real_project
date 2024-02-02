@@ -18,7 +18,7 @@ je te fourni une date tu me donnes:
 - Quel salaire pour cette semaine
 format : aaaa/mm/jj
 """
-def get_hour_from_plage(plages):
+def get_hour_from_plages(plages):
     time_in_seconde = 0
     for plage in plages:
         h1 = datetime.strptime(plage.split(" ")[0],'%H:%M')
@@ -27,7 +27,19 @@ def get_hour_from_plage(plages):
         time_in_seconde = difference.seconds + time_in_seconde
     return time_in_seconde/3600
 
-
+ # Fonction pour convertir une plage de temps en secondes
+def plage_to_seconds(plage):
+    h1, h2 = map(lambda x: datetime.strptime(x, '%H:%M'), plage.split(" "))
+    difference = h2 - h1
+    return difference.seconds
+def get_hour_from_plage(plages):
+    # Utilisation de la fonction map pour appliquer la conversion à chaque plage
+    time_in_seconds_list = map(plage_to_seconds, plages)
+    # Utilisation de la fonction sum pour calculer la somme totale des différences de temps
+    total_time_in_seconds = sum(time_in_seconds_list)
+    # Conversion du temps total en heures
+    total_hours = total_time_in_seconds / 3600
+    return total_hours
 
 def get_plage_horaire(jours):
     heure_total_pointe = 0
