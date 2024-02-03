@@ -1,5 +1,6 @@
 import argparse
 from datetime import datetime
+from operation import load_week_history_from_date
 
 def votre_fonction(salaire, date_formatee='je suis le meilleur'):
     # Votre logique ici
@@ -18,7 +19,7 @@ def main():
     if args.date_formatee is None:
         date_formatee = datetime.now().strftime("%Y-%m-%d")
     # Appel de votre fonction avec les arguments
-    #load_week_history_from_date(date_formatee,args.salaire)
+    load_week_history_from_date(date_formatee,args.salaire)
 
 if __name__ == "__main__":
     main()
